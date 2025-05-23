@@ -11,12 +11,19 @@ Check out the live demo here:
 ## Features
 
 🎶 Play multiple tracks with cover images
+
 🔁 Repeat (loop) playback
+
 🔀 Shuffle (random) playback
+
 ⏮️⏯️⏭️ Standard controls (previous, play/pause, next)
+
 📊 Animated audio visualizer
+
 🔊 Volume control
+
 📉 Interactive progress bar
+
 💿 Rotating disc cover animation during playback
 
 ## Technologies Used
