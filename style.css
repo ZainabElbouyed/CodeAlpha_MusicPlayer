@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player {
+  background: #1e1e1e;
+  padding: 30px 35px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.player:hover {
+  transform: scale(1.02);
+}
+
+.music-info {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+#cover {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 
+    0 0 25px rgba(171, 204, 248, 0.4), 
+    0 0 40px rgba(133, 182, 231, 0.3),
+    0 0 60px rgba(47, 55, 72, 0.2);
+}
+
+.rotating {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.music-info h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.music-info p {
+  font-size: 16px;
+  color: #66fcf1;
+  font-style: italic;
+}
+
+.audio-visualizer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+  margin: 20px auto 30px auto;
+  height: 60px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.audio-visualizer .bar {
+  width: 6px;
+  background: #00ffff;
+  border-radius: 3px;
+  animation: bounce 1.2s infinite ease-in-out;
+  height: 20%; 
+}
+
+@keyframes bounce {
+  0%, 100% {
+    height: 20%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+
+.audio-visualizer .bar:nth-child(1) { animation-delay: 0s; }
+.audio-visualizer .bar:nth-child(2) { animation-delay: 0.1s; }
+.audio-visualizer .bar:nth-child(3) { animation-delay: 0.2s; }
+.audio-visualizer .bar:nth-child(4) { animation-delay: 0.3s; }
+.audio-visualizer .bar:nth-child(5) { animation-delay: 0.4s; }
+.audio-visualizer .bar:nth-child(6) { animation-delay: 0.5s; }
+.audio-visualizer .bar:nth-child(7) { animation-delay: 0.6s; }
+.audio-visualizer .bar:nth-child(8) { animation-delay: 0.7s; }
+.audio-visualizer .bar:nth-child(9) { animation-delay: 0.8s; }
+.audio-visualizer .bar:nth-child(10) { animation-delay: 0.9s; }
+
+.time-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 300px; 
+  margin: 0 auto 10px auto;
+  font-family: Arial, sans-serif;
+  color: #ccc;
+  font-size: 14px;
+}
+#progress {
+  flex-grow: 1; 
+  -webkit-appearance: none; 
+  height: 6px;
+  border-radius: 5px;
+  background: #555;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#progress::-webkit-slider-runnable-track {
+  height: 6px;
+  background: linear-gradient(to right, #00ffff, #00aaff);
+  border-radius: 5px;
+}
+
+#progress::-moz-range-track {
+  height: 6px;
+  background: linear-gradient(to right, #00ffff, #00aaff);
+  border-radius: 5px;
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00ffff;
+  cursor: pointer;
+  margin-top: -4px; 
+  box-shadow: 0 0 5px #00ffff;
+}
+
+#progress::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00ffff;
+  cursor: pointer;
+  box-shadow: 0 0 5px #00ffff;
+}
+
+#progress:hover {
+  background: #666;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.controls > div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.controls i {
+  cursor: pointer;
+  color: white;
+  font-size: 22px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.controls i:hover {
+  transform: scale(1.2);
+  color: #00ffff;
+  border-color: #00ffff;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+}
+
+.playpause-track i {
+  font-size: 30px !important;
+  width: 60px;
+  height: 60px;
+  padding: 12px;
+  border: 2px solid white;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.3);
+}
+
+.playpause-track i:hover {
+  border-color: #00ffff;
+  box-shadow: 0 0 22px rgba(0, 255, 255, 0.6);
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.volume-control input[type="range"] {
+  width: 120px;
+  accent-color: #00bcd4;
+  height: 4px;
+  background: transparent;
+}
